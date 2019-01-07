@@ -8,12 +8,13 @@
 
 ======================================================================================
 
-> This will be a rankings of 42 pisciners.
+> These are rankings for 42's C-Piscines.
 
-> It will be updated every week or so during your piscine.
+> During a piscine, it the rankings will be updated every week or so.
 
-> Feel free to view the source code and point out any bugs.
+> 
 
+\*Piscine Level is the average level of the entire piscine not counting those with a level of 0\*
 ======================================================================================
 
 ### Enjoy :P
