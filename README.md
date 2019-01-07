@@ -12,10 +12,6 @@
 
 > During a piscine, it the rankings will be updated every week or so.
 
-> 
-
-_\* Piscine Level is the average level of the entire piscine not counting those with a level of 0 \*_
-
 ======================================================================================
 
 ### Enjoy :P
