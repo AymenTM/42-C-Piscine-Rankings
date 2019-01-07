@@ -1,9 +1,8 @@
 # 42-PiscineRankings
 
-----
 
-#### For all those competitive people who enjoy competiting with others.
-#### For all those curious of where they sit in their Piscine.
+#### For those curious of where they sit in their Piscine.
+#### For the more competitive people.
 #### For the learning experience of making this little scrapper.
 #### & For the fun of it.
 
