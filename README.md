@@ -20,6 +20,4 @@ Feel free to view the source code and point out any bugs.
 
 ### Enjoy :P
 
-__Inspired by: Xuan Zhu - xzhu__
-
-Checkout his 42 rankings here: https://github.com/xlz447/42-Piscine-C-ranking
+__Inspired by: Xuan Zhu - xzhu__ ——>  https://github.com/xlz447/42-Piscine-C-ranking
