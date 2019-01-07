@@ -1,4 +1,4 @@
-# 42-PiscineRankings
+# 42-Piscine-C-Rankings
 
 
 #### For those curious of where they sit in their Piscine.
