@@ -14,7 +14,8 @@
 
 > 
 
-\*Piscine Level is the average level of the entire piscine not counting those with a level of 0\*
+_\* Piscine Level is the average level of the entire piscine not counting those with a level of 0 \*_
+
 ======================================================================================
 
 ### Enjoy :P
