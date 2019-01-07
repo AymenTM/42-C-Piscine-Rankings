@@ -10,12 +10,9 @@
 
 > These are rankings for 42's C-Piscines.
 
-> During a piscine, it the rankings will be updated every week or so.
+> During a piscine, the Piscine's rankings will be updated every week or so.
 
 ======================================================================================
-
-### Enjoy :P
-
 
 -----
 _Inspired by: Xuan Zhu - xzhu  ——>  [Check his out!](https://github.com/xlz447/42-Piscine-C-ranking)_
