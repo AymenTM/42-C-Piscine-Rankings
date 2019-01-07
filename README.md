@@ -8,8 +8,6 @@
 
 ======================================================================================
 
-> These are rankings for 42's C-Piscines.
-
 > During a piscine, the Piscine's rankings will be updated every week or so.
 
 ======================================================================================
