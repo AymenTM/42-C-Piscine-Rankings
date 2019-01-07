@@ -6,10 +6,4 @@
 #### For the learning experience of making this little scrapper.
 #### & For the fun of it.
 
-======================================================================================
-
-> During a piscine, the Piscine's rankings will be updated every week or so.
-
-======================================================================================
-
 _Inspired by: Xuan Zhu - xzhu  ——>  [Check his out!](https://github.com/xlz447/42-Piscine-C-ranking)_
