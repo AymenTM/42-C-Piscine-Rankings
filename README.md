@@ -7,7 +7,7 @@
 #### For the learning experience of making this little scrapper.
 #### & For the fun of it.
 
-==========================================================================================
+======================================================================================
 
 > This will be a rankings of 42 pisciners.
 > It will be updated every week or so during your piscine.
@@ -16,7 +16,7 @@
 
 > & Feel free to look yourself up and your friends in the CSV file.
 
-==========================================================================================
+======================================================================================
 
 ### Enjoy :P
 
