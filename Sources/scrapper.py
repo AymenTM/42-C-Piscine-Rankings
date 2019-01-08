@@ -18,11 +18,13 @@ def still_swimming(user):
     return True if user['level'] > 0 else False
 
 
-def get_average_level():
+def get_average_level(swimmers):
+
     total_level = 0
-    for user in all_user_info:
+    for user in swimmers:
         total_level += user['level']
-    return total_level / (total_pisciners - total_drowned)
+
+    return total_level // len(swimmers)
 
 
 # Login on Intra — — — — — — — — — — — — — — — — — — — — — — — — —
@@ -71,15 +73,14 @@ all_user_info.sort(key=get_user_lvl, reverse=True)
 
 # Get some Statistics — — — — — — — — — — — — — — — — — — — — —
 
-total_pisciners = len(all_user_info)
-
 swimmers = list(itertools.takewhile(still_swimming, all_user_info))
 drownees = list(itertools.dropwhile(still_swimming, all_user_info))
 
+total_pisciners = len(all_user_info)
 total_swimming = len(swimmers)
 total_drowned = len(drownees)
 
-average_level = get_average_level()
+average_level = get_average_level(swimmers)
 
 
 # Write the Result to a CSV File — — — — — — — — — — — — — — — —
@@ -92,21 +93,16 @@ with open(f'../{PISCINE}_Rankings.csv', 'w') as f:
 
     csv_writer.writerow(['Rank', 'Pisciner', 'Level'])
 
-    csv_writer.writerow(['', '', ''])
-    csv_writer.writerow(['Swimmers', '', ''])
-
     for user in swimmers:
         csv_writer.writerow([rank, user['login'], f"{user['level']:.2f}"])
         rank += 1
 
     csv_writer.writerow(['', '', ''])
-    csv_writer.writerow(['Drowned', '', ''])
 
     for user in drownees:
         csv_writer.writerow(['unranked', user['login'], f"{user['level']:.2f}"])
 
     csv_writer.writerow(['', '', ''])
-    csv_writer.writerow(['Statistics', '', ''])
     csv_writer.writerow(['Total Pisciners', '', total_pisciners])
     csv_writer.writerow(['Total Swimming', '', total_swimming])
     csv_writer.writerow(['Total Drowned', '', total_drowned])

@@ -1,6 +1,4 @@
 Rank,Pisciner,Level
-,,
-Swimmers,,
 1,jaodum,9.35
 2,wiljean-,8.15
 3,zstucke,8.05
@@ -205,7 +203,6 @@ Swimmers,,
 202,majames,0.18
 203,aliberal,0.12
 ,,
-Drowned,,
 unranked,akantur,0.00
 unranked,aletsai,0.00
 unranked,almannil,0.00
@@ -259,8 +256,7 @@ unranked,ykashans,0.00
 unranked,zhzhai,0.00
 unranked,zpetrov,0.00
 ,,
-Statistics,,
 Total Pisciners,,255
-Total Swimming,,52
-Total Drowned,,203
-Average Level,,11.279230769230766
+Total Swimming,,203
+Total Drowned,,52
+Average Level,,2.0
