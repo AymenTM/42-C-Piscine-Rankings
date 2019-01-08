@@ -8,8 +8,8 @@ import re
 import os
 import csv
 
-from piscine import PISCINE
-from piscine import LOGINS
+from piscineSep2018 import PISCINE
+from piscineSep2018 import LOGINS
 
 
 # Login on Intra — — — — — — — — — — — — — — — — — — — — — — — — —
@@ -36,7 +36,7 @@ for login in LOGINS:
     # soup = BeautifulSoup(source, 'html5lib')
 
     # Retrieve
-    match = re.search(r'"Piscine C":{"level":\d\.\d\d?', str(source))
+    match = re.search(r'"Piscine C":{"level":\d\.\d\d?', source)
     level = re.search(r'\d\.\d\d?', match[0])
 
     # Store
@@ -61,7 +61,7 @@ all_user_info.sort(key=get_user_lvl, reverse=True)
 
 rank = 1
 
-with open(f'{PISCINE}_Rankings.csv', 'w') as f:
+with open(f'../{PISCINE}_Rankings.csv', 'w') as f:
 
     csv_writer = csv.writer(f, delimiter=',')
 
