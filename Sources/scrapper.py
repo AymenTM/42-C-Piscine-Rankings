@@ -2,14 +2,30 @@
 # Version 0.1
 
 from robobrowser import RoboBrowser
-from bs4 import BeautifulSoup
 
 import re
 import os
 import csv
 
-from piscineSep2018 import PISCINE
-from piscineSep2018 import LOGINS
+from piscineOct2018 import PISCINE
+from piscineOct2018 import LOGINS
+
+
+# We'll need these later — — — — — — — — — — — — — — — — — — — — —
+
+def get_dropouts():
+    dropouts = 0
+    for user in all_user_info:
+        if user['level'] == 0:
+            dropouts += 1
+    return dropouts
+
+
+def get_average_level():
+    total_level = 0
+    for user in all_user_info:
+        total_level += user['level']
+    return total_level // (total_pisciners - total_dropouts)
 
 
 # Login on Intra — — — — — — — — — — — — — — — — — — — — — — — — —
@@ -33,7 +49,6 @@ for login in LOGINS:
     # Look Up
     browser.open(f'https://profile.intra.42.fr/users/{login}')
     source = str(browser.parsed())
-    # soup = BeautifulSoup(source, 'html5lib')
 
     # Retrieve
     match = re.search(r'"Piscine C":{"level":\d\.\d\d?', source)
@@ -57,6 +72,13 @@ def get_user_lvl(user):
 all_user_info.sort(key=get_user_lvl, reverse=True)
 
 
+# Get some Statistics — — — — — — — — — — — — — — — — — — — — —
+
+total_pisciners = len(all_user_info)
+total_dropouts = get_dropouts()
+average_level = get_average_level()
+
+
 # Write the Result to a CSV File — — — — — — — — — — — — — — — —
 
 rank = 1
@@ -66,6 +88,9 @@ with open(f'../{PISCINE}_Rankings.csv', 'w') as f:
     csv_writer = csv.writer(f, delimiter=',')
 
     csv_writer.writerow(['Rank', 'Login', 'Level'])
+    csv_writer.writerow(['Total Pisciners', '', total_pisciners])
+    csv_writer.writerow(['Total Drowned', '', total_dropouts])
+    csv_writer.writerow(['Average Level', '', average_level])
 
     for user in all_user_info:
         csv_writer.writerow([rank, user['login'], f"{user['level']:.2f}"])

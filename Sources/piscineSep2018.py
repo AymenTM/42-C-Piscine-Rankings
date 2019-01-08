@@ -2,7 +2,7 @@
 month = 'September'
 year = '2018'
 
-PISCINE = f'{month}_Piscine_{year}'
+PISCINE = f'{month}{year}'
 LOGINS = [
     'agolunov',
     'akawa',
