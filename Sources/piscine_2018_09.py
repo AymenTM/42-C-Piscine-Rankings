@@ -1,8 +1,8 @@
 
 month = 'September'
-year = '2018'
+date = '2018_09'
 
-PISCINE = f'{month}{year}'
+PISCINE = f'{date}_{month}'
 LOGINS = [
     'agolunov',
     'akawa',

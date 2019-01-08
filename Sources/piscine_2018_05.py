@@ -1,8 +1,8 @@
 
 month = 'May'
-year = '2018'
+date = '2018_05'
 
-PISCINE = f'{month}{year}'
+PISCINE = f'{date}_{month}'
 LOGINS = [
     'xzhu',
     'aalhomai',

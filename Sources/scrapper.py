@@ -8,8 +8,8 @@ import os
 import csv
 import itertools
 
-from piscineMay2018 import PISCINE
-from piscineMay2018 import LOGINS
+from piscine_2018_10 import PISCINE
+from piscine_2018_10 import LOGINS
 
 
 # We'll need these later — — — — — — — — — — — — — — — — — — — — —
