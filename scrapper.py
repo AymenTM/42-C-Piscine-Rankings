@@ -1,25 +1,18 @@
 
 # Version 0.1
 
-from bs4 import BeautifulSoup
 from robobrowser import RoboBrowser
+from bs4 import BeautifulSoup
 
 import re
 import os
 import csv
-import datetime
 
+from piscine import PISCINE
 from piscine import USERNAMES
 
 
-# Get Piscine Month & Year — — — — — — — — — — — — — — — — — — —
-
-month = datetime.date.today().strftime('%B')
-year = datetime.date.today().year
-piscine = f'{month}_Piscine_{year}'
-
-
-# Login to a 42 Account — — — — — — — — — — — — — — — — — — — — —
+# Login on Intra — — — — — — — — — — — — — — — — — — — — — — — — —
 
 browser = RoboBrowser(parser='html5lib')
 browser.open('https://signin.intra.42.fr/users/sign_in')
@@ -68,7 +61,7 @@ all_user_info.sort(key=get_user_lvl, reverse=True)
 
 rank = 1
 
-with open(f'{piscine}_Rankings.csv', 'w') as f:
+with open(f'{PISCINE}_Rankings.csv', 'w') as f:
 
     csv_writer = csv.writer(f, delimiter=',')
 
@@ -77,3 +70,6 @@ with open(f'{piscine}_Rankings.csv', 'w') as f:
     for user in all_user_info:
         csv_writer.writerow([rank, user['username'], f"{user['level']:.2f}"])
         rank += 1
+
+
+# Done.
