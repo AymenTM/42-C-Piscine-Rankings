@@ -9,7 +9,7 @@ import os
 import csv
 
 from piscine import PISCINE
-from piscine import USERNAMES
+from piscine import LOGINS
 
 
 # Login on Intra — — — — — — — — — — — — — — — — — — — — — — — — —
@@ -28,10 +28,10 @@ browser.submit_form(form)
 
 all_user_info = []
 
-for username in USERNAMES:
+for login in LOGINS:
 
     # Look Up
-    browser.open(f'https://profile.intra.42.fr/users/{username}')
+    browser.open(f'https://profile.intra.42.fr/users/{login}')
     source = str(browser.parsed())
     # soup = BeautifulSoup(source, 'html5lib')
 
@@ -42,7 +42,7 @@ for username in USERNAMES:
     # Store
     all_user_info.append(
         {
-            'username': username,
+            'login': login,
             'level': float(level[0])
         }
     )
@@ -65,10 +65,10 @@ with open(f'{PISCINE}_Rankings.csv', 'w') as f:
 
     csv_writer = csv.writer(f, delimiter=',')
 
-    csv_writer.writerow(['Rank', 'Username', 'Level'])
+    csv_writer.writerow(['Rank', 'Login', 'Level'])
 
     for user in all_user_info:
-        csv_writer.writerow([rank, user['username'], f"{user['level']:.2f}"])
+        csv_writer.writerow([rank, user['login'], f"{user['level']:.2f}"])
         rank += 1
 
 
