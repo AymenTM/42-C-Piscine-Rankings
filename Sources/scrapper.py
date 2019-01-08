@@ -8,8 +8,8 @@ import os
 import csv
 import itertools
 
-from piscineSep2018 import PISCINE
-from piscineSep2018 import LOGINS
+from piscineMay2018 import PISCINE
+from piscineMay2018 import LOGINS
 
 
 # We'll need these later — — — — — — — — — — — — — — — — — — — — —
@@ -111,7 +111,7 @@ with open(f'../{PISCINE}_Rankings.csv', 'w') as f:
     csv_writer.writerow(['Total Pisciners', '', total_pisciners])
     csv_writer.writerow(['Total Survivors', '', total_swimming])
     csv_writer.writerow(['Total Drowned', '', total_drowned])
-    csv_writer.writerow(['Piscine Level', '', average_level])
+    csv_writer.writerow(['Average Level', '', average_level])
 
 
 # Done.
