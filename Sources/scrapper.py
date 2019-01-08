@@ -31,12 +31,12 @@ all_user_info = []
 for username in USERNAMES:
 
     # Look Up
-    source = browser.open(f'https://profile.intra.42.fr/users/{username}')
+    browser.open(f'https://profile.intra.42.fr/users/{username}')
     source = str(browser.parsed())
-    soup = BeautifulSoup(source, 'html5lib')
+    # soup = BeautifulSoup(source, 'html5lib')
 
     # Retrieve
-    match = re.search(r'"Piscine C":{"level":\d\.\d\d?', str(soup))
+    match = re.search(r'"Piscine C":{"level":\d\.\d\d?', str(source))
     level = re.search(r'\d\.\d\d?', match[0])
 
     # Store
