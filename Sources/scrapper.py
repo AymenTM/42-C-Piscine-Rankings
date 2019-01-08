@@ -24,7 +24,7 @@ def get_average_level(swimmers):
     for user in swimmers:
         total_level += user['level']
 
-    return total_level // len(swimmers)
+    return total_level / len(swimmers)
 
 
 # Login on Intra — — — — — — — — — — — — — — — — — — — — — — — — —
@@ -45,13 +45,18 @@ all_user_info = []
 
 for login in LOGINS:
 
-    # Look Up
-    browser.open(f'https://profile.intra.42.fr/users/{login}')
-    source = str(browser.parsed())
+    try:
 
-    # Retrieve
-    match = re.search(r'"Piscine C":{"level":\d\.\d\d?', source)
-    level = re.search(r'\d\.\d\d?', match[0])
+        # Look Up
+        browser.open(f'https://profile.intra.42.fr/users/{login}')
+        source = str(browser.parsed())
+
+        # Retrieve
+        match = re.search(r'"Piscine C":{"level":\d\.\d\d?', source)
+        level = re.search(r'\d\.\d\d?', match[0])
+
+    except:
+        continue
 
     # Store
     all_user_info.append(
@@ -80,7 +85,7 @@ total_pisciners = len(all_user_info)
 total_swimming = len(swimmers)
 total_drowned = len(drownees)
 
-average_level = get_average_level(swimmers)
+average_level = f'{get_average_level(swimmers):.2f}'
 
 
 # Write the Result to a CSV File — — — — — — — — — — — — — — — —
@@ -106,7 +111,7 @@ with open(f'../{PISCINE}_Rankings.csv', 'w') as f:
     csv_writer.writerow(['Total Pisciners', '', total_pisciners])
     csv_writer.writerow(['Total Survivors', '', total_swimming])
     csv_writer.writerow(['Total Drowned', '', total_drowned])
-    csv_writer.writerow(['Average Level', '', average_level])
+    csv_writer.writerow(['Piscine Level', '', average_level])
 
 
 # Done.
